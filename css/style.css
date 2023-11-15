@@ -1,0 +1,1083 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'notosans';
+    src: url('/font/NotoSansKR-VariableFont_wght.ttf');
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'notosans';
+    color: #222;
+}
+h1 {font-size: 48px; font-weight: 600;}
+h3 {font-size: 24px; font-weight: 700;}
+h4 {font-size: 20px; font-weight: 700;}
+
+ul{list-style: none;}
+a{text-decoration: none; color: inherit;}
+.left{float: left;}
+.right{float: right;}
+.clear{clear: both;}
+
+article {
+    background: #FEFEFE;
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px 0px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+}
+.golink {
+    color: #D50527;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: .4s;
+    border-bottom: 1px solid rgba(255, 0, 0, 0);
+}
+.golink:hover {
+    cursor: pointer;
+}
+.golink-flow-left{
+    width: 10px;
+    height: 10px;
+    background: url('../img/icon/flow.svg')no-repeat center/cover;
+}
+.golink-flow-right{
+    width: 10px;
+    height: 10px;
+    background: url('../img/icon/flow.svg')no-repeat center/cover;
+    transform: rotate(180deg);
+}
+button {
+    height: 60px;
+    border: 2px solid #D50527;
+    background: #D50527;
+    color: #FEFEFE;
+    font-size: 16px;
+    border-radius: 10px;
+}
+button:hover {
+    background-color: #ee062c;
+}
+button:active {
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.30) inset;
+}
+
+
+.popup {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    bottom: 100%; left: 0;
+    z-index: 998;
+    opacity: 0;
+    transition: .4s;
+    background: rgba(34, 34, 34, 0.3); 
+    backdrop-filter: blur(50px);
+}
+.popup.active {
+    opacity: 1;
+    bottom: 0;
+    left: 0;
+}
+
+.popup p {
+    font-size: 400px;
+    margin: 120px auto 0;
+    text-align: center;
+    color: #fefefe;
+}
+
+.popup .button {
+    width: 400px;
+    height: 120px;
+    font-size: 48px;
+    background-color: #D50527;
+    border-radius: 10px;
+    color: #FEFEFE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: .2s;
+}
+.popup .button:hover {
+    background-color: #ffffff;
+    color: #D50527;
+}
+
+
+
+
+
+
+
+/* 헤더 */
+
+header {
+    width: 100%;
+    height: 80px;
+    background-color: #fefefe;
+    box-shadow: 5px 5px 20px 0px rgba(0, 0, 0, 0.05);
+    padding: 0 350px;
+    position: fixed;
+    z-index: 999;
+}
+header .inner {
+    width: 100%;
+    height: 100%;
+}
+
+/* 로고 */
+header .inner .logo {
+    width: 110px;
+    height: 80px;
+}
+header .inner .logo a {
+    display: block;
+    width: 110px;
+    height: 56px;
+    margin-top: 12px;
+    background: url('../img/Logo/Logo.svg')no-repeat center/cover;
+}
+
+/* 네비 메인메뉴 */
+header .inner nav {
+    height: 100%;
+}
+header .inner nav .navigation {
+    display: flex;
+    justify-content: start;
+    height: 100%;
+}
+header .inner nav .navigation li {
+    height: 100%;
+    padding: 38px 20px 0 20px;
+}
+header .inner nav .navigation li a {
+    display: block;
+    font-size: 16px;
+    transition: .4s;
+}
+header .inner nav .navigation li a:hover {
+    border-bottom: 1px solid #D50527;
+    color: #D50527;
+}
+header .inner nav .navigation li:nth-child(1) > a , li:nth-child(5) > a {
+    position: relative;
+}
+header .inner nav .navigation li:nth-child(1) span.yap {
+    height: 14px;
+    width: 22px;
+    background: url('../img/header/Hot.svg')no-repeat center/cover;
+    position: absolute;
+}
+header .inner nav .navigation li:nth-child(5) span.yap {
+    height: 14px;   
+    width: 22px;
+    background: url('../img/header/Beta.svg')no-repeat center/cover;
+    position: absolute;
+}
+
+/* 네비 사이드 */
+header .inner .SNB {
+    display: flex;
+    height: 100%;
+}
+header .inner .SNB p {
+    padding-top: 38px;
+    height: 100%;
+    transition: .4s;
+}
+header .inner .SNB p a {
+    padding: 0 20px;
+    display: block;
+    transition: .4s;
+    font-size: 14px;
+}
+header .inner .SNB p a:hover {
+    color: #D50527;
+}
+header .inner .SNB p:nth-child(1) a {
+    border-right: 1px solid #e6e6e6;
+}
+header .inner .SNB .menubox {
+    background: url('../img/header/menu.svg')no-repeat center/cover;
+    height: 21px; width: 21px;
+    margin-top: 37px;
+    cursor: pointer;
+}
+header .inner .SNB .menubox:hover {
+    border: 1px dotted #D50527;
+    transition: .4s;
+    transform: rotate(90deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+/* 메인 */
+main {
+    width: 100%;
+}
+
+/* 메인 상단섹션 백그라운드 */
+main .first-section .wrap {
+    width: 100%;
+    padding: 0 350px 20px;
+    /* z-index: 999; */
+    position: relative;
+    z-index: 9; 
+}
+main .first-section {
+    background: url('../img/BG/intro_visual.jpg')no-repeat center/cover;
+    width: 100%;
+    height: 660px;
+    /* z-index: -9; */
+    position: relative; 
+}
+main .first-section::after {
+    content: '';
+    width: 100%;
+    height: 580px;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    left: 0;
+    top: 80px;
+    z-index: 1;
+}
+/* 사이드 광고배너 */
+main .first-section .side-advertisementright {
+    height: 300px;
+    width: 130px;
+    position: absolute;
+    top: calc(100% - 20px); right: 350px;
+    transform: translateX(calc(100% + 20px));
+    background: url('../img/banner/volkswagen_used_rtss_200422_2.jpg')no-repeat center/cover;
+    border: 1px solid #fefefe;
+    transition: .4s;
+    z-index: 9; 
+}
+main .first-section .side-advertisementright:hover {
+    top: calc(100% - 30px);
+    box-shadow: 5px 5px 20px 0px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+main .first-section .side-advertisementleft {
+    height: 300px;
+    width: 130px;
+    position: absolute;
+    top: calc(100% - 20px); left: 350px;
+    transform: translateX(calc(-100% + -20px));
+    background: url('../img/banner/samsungfire_direct_rtss_230801.jpg')no-repeat center/cover;
+    border: 1px solid #fefefe;
+    transition: .4s;
+    z-index: 9; 
+}
+main .first-section .side-advertisementleft:hover {
+    top: calc(100% - 30px); left: 350px;
+    box-shadow: 5px 5px 20px 0px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+/* 상단 섹션 */
+/* 넘버 타이포그래피 */
+main .first-section .number-grop {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 140px;
+    padding-bottom: 40px;
+}
+main .first-section .number-grop > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    color: #fefefe;
+}
+main .first-section .number-grop div h1 {
+    color: #fefefe;
+}
+main .first-section .number-grop div h1 small {
+    color: #fefefe;
+    font-size: 20px;
+}
+main .first-section .number-grop div p {
+    color: #fefefe;
+}
+
+/* 왼쪽 그룹(어떤자동차?, 내 차 시세?) */
+main .first-section .left-grop {
+    width: calc(100% - 420px);
+}
+
+/* 자동차 찾기 바 */
+main .first-section .left-grop .filter-bar {
+    width: 100%;
+    height: 280px;
+    background-color: #fefefe;
+    border-radius: 10px;
+}
+main .first-section .left-grop .filter-bar .inner {
+    padding: 40px 30px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* 타이틀 + 검색영역 */
+main .first-section .left-grop .filter-bar .inner .title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+main .first-section .left-grop .filter-bar .inner .title .titlep {}
+main .first-section .left-grop .filter-bar .inner .title .titlep p{
+    font-size: 14px;
+    color: #808080;
+}
+main .first-section .left-grop .filter-bar .inner .title .searchbox {
+    height: 100%;
+    position: relative;
+}
+main .first-section .left-grop .filter-bar .inner .title .searchbox input {
+    font-size: 14px;
+    color: #cccccc;
+    background-color: #eee;
+    padding: 10px 15px;
+    width: 350px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    color: #222;
+}
+main .first-section .left-grop .filter-bar .inner .title .searchbox::after {
+    content: '';
+    background: url('../img/icon/search.svg')no-repeat center/cover;
+    width: 33px;
+    height: 30px;
+    /* display: inline-block; */
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 8px;
+    z-index: 9;
+}
+main .first-section .left-grop .filter-bar .inner .title .searchbox input::placeholder {
+    color: #999;
+}
+main .first-section .left-grop .filter-bar .inner .title .searchbox input:focus {
+    border: 2px solid gray;
+}
+
+
+/* 필터링 + 버튼영역 */
+main .first-section .left-grop .filter-bar .inner .textbtn {
+    width: 100%;
+}
+main .first-section .left-grop .filter-bar .inner .textbtn .texttop {
+    width: 100%;
+}
+main .first-section .left-grop .filter-bar .inner .textbtn .texttop h6 {
+    font-size: 16px;
+    color: #222;
+    margin-right: 30px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+main .first-section .left-grop .filter-bar .inner .textbtn .texttop button.checkbox {
+    border: 1px solid #999;
+    height: 22px;
+    width: 88px;
+    font-size: 12px;
+    color: #808080;
+    background-color: #FEFEFE;
+    margin-right: 10px;
+    transition: .1s;
+}
+main .first-section .left-grop .filter-bar .inner .textbtn .texttop button.checkbox.red{
+    border: 1px solid #D50527;
+    color: #D50527;
+}
+main .first-section .left-grop .filter-bar .inner .textbtn .texttop button.checkbox:active {
+    box-shadow: none;
+}
+main .first-section .left-grop .filter-bar .inner .textbtn .texttop button.checkbox.active {
+    color: #D50527;
+    border: 1px solid #D50527;
+}
+main .first-section .left-grop .filter-bar .inner .textbtn .btnmid {
+    height: 60px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+main .first-section .left-grop .filter-bar .inner .textbtn .btnmid .filter {
+    width: calc(100% - 195px);
+    height: 100%;
+    padding: 9px 20px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #eeeeee;
+    border-radius: 10px;
+}
+main .first-section .left-grop .filter-bar .inner .textbtn .btnmid .filter .half {
+    width: calc(33.333% - 15px);
+    position: relative;
+    cursor: pointer;
+}
+main .first-section .left-grop .filter-bar .inner .textbtn .btnmid .filter .half:hover p {
+    color: #808080;
+}
+main .first-section .left-grop .filter-bar .inner .textbtn .btnmid .filter .half h6 {
+    font-size: 12px;
+    color: #808080;
+}
+main .first-section .left-grop .filter-bar .inner .textbtn .btnmid .filter .half p {
+    display: inline-block;
+    font-size: 14px;
+    color: #808080;
+    transition: .2s;
+}
+main .first-section .left-grop .filter-bar .inner .textbtn .btnmid .filter .half p span {
+    width: 11px;
+    height: 9px;
+    background: url('../img/icon/tra.svg')no-repeat center/cover;
+    position: absolute;
+    right: 0;
+    top: 26px;
+}
+main .first-section .left-grop .filter-bar .inner .textbtn .btnmid button.searchbtn {
+    width: 165px;
+}
+
+main .first-section .left-grop .filter-bar .inner .textbtn .textbottom {
+    width: 100%;
+}
+main .first-section .left-grop .filter-bar .inner .textbtn .textbottom a {
+    font-size: 12px;
+    color: #666666;
+    margin-right: 20px;
+}
+
+
+
+
+/* 내차팔기 바 */
+main .first-section .left-grop .howmuch-bar {
+    width: 100%;
+    height: 220px;
+    background-color: #fefefe;
+    border-radius: 10px;
+}
+main .first-section .left-grop .howmuch-bar .inner {
+    padding: 30px;
+    height: 100%;
+}
+main .first-section .left-grop .howmuch-bar .inner .sell-car {
+    width: calc(100% - 330px);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+main .first-section .left-grop .howmuch-bar .inner .sell-car .title {
+    display: flex;
+    justify-content: space-between;
+}
+main .first-section .left-grop .howmuch-bar .inner .sell-car .titlep {
+    margin-top: 10px;
+}
+main .first-section .left-grop .howmuch-bar .inner .sell-car .titlep p {
+    font-size: 14px;    
+    color: #808080;
+}
+main .first-section .left-grop .howmuch-bar .inner .sell-car .image {
+    background: url('../img/BG/handskey.png')no-repeat center/cover;
+    width: 110px;
+    height: 80px;
+}
+
+main .first-section .left-grop .howmuch-bar .inner .sell-car .textbtn {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+main .first-section .left-grop .howmuch-bar .inner .sell-car .textbtn input{
+    width: calc(100% - 150px);
+    border-radius: 10px;
+    border: none;
+    padding: 0 20px;
+    background-color: #eee;
+    color: #cccccc;
+    font-size: 16px;
+    outline: none;
+}
+main .first-section .left-grop .howmuch-bar .inner .sell-car .textbtn input::placeholder {
+    color: #808080;
+}
+main .first-section .left-grop .howmuch-bar .inner .sell-car .textbtn input:focus {
+    border: 2px solid gray;
+    color: #222;
+}
+
+main .first-section .left-grop .howmuch-bar .inner .sell-car .textbtn .clicker{
+    width: 120px;
+}
+
+main .first-section .left-grop .howmuch-bar .inner .directly-card {
+    width: 300px;
+    padding: 30px;
+    transition: .3s;
+}
+main .first-section .left-grop .howmuch-bar .inner .directly-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 5px 5px 20px 0px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    border-radius: 10px;
+}
+main .first-section .left-grop .howmuch-bar .inner .directly-card p:nth-child(2){
+    font-size: 14px;
+    color: #808080;
+    margin-bottom: 23px;
+}
+main .first-section .left-grop .howmuch-bar .inner .directly-card p:nth-child(3) {
+    width: 100px;
+}
+
+
+
+
+
+
+
+
+
+/* 오른쪽 그룹(스와이퍼, 광고박스) */
+/* 오른쪽 광고 스와이퍼 */
+main .first-section .right-grop .advertisement-swiper {
+    width: 100%;
+    height: 100%;
+}
+main .first-section .right-grop .advertisement-swiper .adver-swiper {
+    width: 100%;
+    height: 100%;
+}
+main .first-section .right-grop .advertisement-swiper .adver-swiper .swiper-wrapper {
+    width: 100%;
+    height: 100%;
+}
+main .first-section .right-grop .advertisement-swiper .adver-swiper .swiper-wrapper .swiper-slide {
+    padding: 30px 0px 40px 30px;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+main .first-section .right-grop .advertisement-swiper .adver-swiper .swiper-wrapper .swiper-slide .slide-inner {
+    width: 40%;
+}
+main .first-section .right-grop .advertisement-swiper .adver-swiper .swiper-wrapper .swiper-slide .slide-inner  h4 {
+    font-size: 20px;
+    color: #222;
+}
+main .first-section .right-grop .advertisement-swiper .adver-swiper .swiper-wrapper .swiper-slide .slide-inner  p:nth-child(2) {
+    font-size: 14px;
+    color: #808080;
+    margin-bottom: 30px;
+}
+main .first-section .right-grop .advertisement-swiper .adver-swiper .swiper-wrapper .swiper-slide .img{
+    width: 60%;
+    height: 100%;
+}
+.swiper-pagination .swiper-pagination-bullet {
+    background-color: #D50527;
+}
+
+
+main .first-section .right-grop {
+    width: 400px;
+}
+main .first-section .right-grop .advertisement-swiper {
+    width: 100%;
+    height: 220px;
+    background-color: #fefefe;
+    border-radius: 10px;
+}
+main .first-section .right-grop .advertisement-box {
+    width: 400px;
+    height: 280px;
+    background: url('../img/banner/heydealer.jpg')no-repeat top/cover;
+    border-radius: 10px;
+    transition: .4s;
+}
+main .first-section .right-grop .advertisement-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 5px 5px 20px 0px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+
+/* 메인 하단섹션 백그라운드 */
+main .second-section {
+    width: 100%;
+    background: url('../img/BG/BG.png')repeat center/contain;
+    height: 100%;
+}
+main .second-section .wrap {
+    width: 100%;
+    padding: 160px 350px 20px;
+}
+
+/* 하단섹션 */
+/* 광고 배너 */
+main .second-section .banner {
+    width: 100%;
+    background-color: #fefefe;
+    height: 160px;
+    display: flex;
+    transition: .4s;
+}
+main .second-section .banner:hover {
+    transform: translateY(-5px);
+    box-shadow: 5px 5px 20px 0px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+/* 광고배너 1 */
+main .second-section .advertisement1 .textbox {
+    width: 400px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+main .second-section .advertisement1 .textbox .benzlogo {
+    height: 14px;
+    width: 120px;
+    background: url('../img/banner/mercedes_benz.svg')no-repeat center/cover;
+}
+main .second-section .advertisement1 .imgbox {
+    width: calc(100% - 400px);
+    height: 100%;
+    border-radius: 0 10px 10px 0;
+    background: url('../img/banner/Sclass.jpg')no-repeat center/cover;
+}
+
+
+
+/* 엔카리뷰 아티클 */
+main .second-section .encar-review {
+    width: 100%;
+    height: 520px;
+}
+main .second-section .encar-review .inner {
+    width: 100%;
+    height: 100%;
+    padding: 40px 20px 20px;
+}
+main .second-section .encar-review .inner .top-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2px;
+}
+main .second-section .encar-review .inner .mid-title {
+    font-size: 14px;
+    color: #808080;
+}
+main .second-section .encar-review .inner .review-swiper {
+    height: 400px;
+    width: 100%;
+}
+
+main .second-section .encar-review .inner .review-swiper .swiper-wrapper  {
+    width:100%;
+    height: 400px;
+    margin-top: 37px;
+    position: relative;
+}
+main .second-section .encar-review .inner .review-swiper .swiper-wrapper .swiper-slide {
+    width: 380px;
+    height: 340px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px 0px rgba(0, 0, 0, 0.05);
+    transition: .4s;
+}
+main .second-section .encar-review .inner .review-swiper .swiper-wrapper .swiper-slide:hover {
+    transform: translateY(-10px);
+    box-shadow: 5px 5px 20px 0px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+main .second-section .encar-review .inner .review-swiper .swiper-button-next {
+    width: 30px;
+    height: 30px;
+    background: url('../img/icon/flow.svg')no-repeat center/contain;
+    transform: rotate(180deg);  
+    position: absolute;
+    right: 0;
+}
+main .second-section .encar-review .inner .review-swiper .swiper-button-next::after {
+    content: 'none';
+}
+main .second-section .encar-review .inner .review-swiper .swiper-button-prev {
+    width: 30px;
+    height: 30px;
+    background: url('../img/icon/flow.svg')no-repeat center/contain;
+    position: absolute;
+    left: 0;
+}
+main .second-section .encar-review .inner .review-swiper .swiper-button-prev::after {
+    content: 'none'
+}
+
+
+
+
+/* 커뮤니티 아티클 */
+main .second-section .community {
+    width: 100%;
+    height: 520px;
+}
+main .second-section .community .inner {
+    width: 100%;
+    padding: 40px 20px 20px;
+    height: 100%;
+}
+main .second-section .community .inner .top-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2px;
+}
+main .second-section .community .inner .mid-title {
+    font-size: 14px;
+    color: #808080;
+    margin-bottom: 37px;
+}
+main .second-section .community .inner .bottom-content {
+    width: 100%;
+    height: 369px;
+}
+main .second-section .community .inner .bottom-content h6 {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* 미디어 탭 */
+main .second-section .community .inner .bottom-content .media {
+    width: calc(33.33% - 20px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+main .second-section .community .inner .bottom-content .media .mediabox {
+    width: 100%;
+    height: 100%;
+    background: url('../img/community/frrraa.png')no-repeat center/cover;
+    border-radius: 10px;
+    cursor: pointer;
+}
+main .second-section .community .inner .bottom-content .media .mediabox:hover .title-filter{
+    height: 50%;
+}
+main .second-section .community .inner .bottom-content .media .mediabox:hover div p{
+    text-decoration: underline;
+}
+main .second-section .community .inner .bottom-content .media .mediabox .title-filter {
+    background: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.00) 100%);
+    width: 100%;
+    height: 25%;
+    border-radius: 10px;
+    transition: .4s;
+}
+main .second-section .community .inner .bottom-content .media .mediabox .title-filter p {
+    padding: 12px 10px 0;
+    color: #fefefe;
+    font-size: 14px;
+}
+
+/* 뉴스 탭 */
+main .second-section .community .inner .bottom-content .news {
+    width: calc(66.67%);
+    height: 369px;
+}
+main .second-section .community .inner .bottom-content .news .newsbox {
+    width: 100%;
+    height: calc(100% - 30px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+main .second-section .community .inner .bottom-content .news .newsbox .babox {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    height: calc(50% - 10px);
+}
+main .second-section .community .inner .bottom-content .news .newsbox .box {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+}
+main .second-section .community .inner .bottom-content .news .newsbox .box:hover div {
+    height: 50%;
+}
+main .second-section .community .inner .bottom-content .news .newsbox .box:hover div p{
+    text-decoration: underline;
+}
+main .second-section .community .inner .bottom-content .news .newsbox div div {
+    width: 100%;
+    height: 25%;
+    background: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.00) 100%);
+    border-radius: 10px;
+    transition: .4s;
+}
+main .second-section .community .inner .bottom-content .news .newsbox div div p {
+    padding: 5px 8px 0;
+    color: #fefefe;
+    font-size: 12px;
+    transition: .4s;
+}
+
+/* 사진 */
+main .second-section .community .inner .bottom-content .news .newsbox .babox:nth-child(1) .box:nth-child(1) {
+    background: url('../img/community/tesla.png')no-repeat center/cover;
+}
+main .second-section .community .inner .bottom-content .news .newsbox .babox:nth-child(1) .box:nth-child(2) {
+    background: url('../img/community/thumb.png')no-repeat center/cover;
+}
+main .second-section .community .inner .bottom-content .news .newsbox .babox:nth-child(1) .box:nth-child(3) {
+    background: url('../img/community/Frame-12.png')no-repeat center/cover;
+}
+main .second-section .community .inner .bottom-content .news .newsbox .babox:nth-child(2) .box:nth-child(1) {
+    background: url('../img/community/촬영본.05_37_42_18.Still005-1.jpg')no-repeat center/cover;
+}
+main .second-section .community .inner .bottom-content .news .newsbox .babox:nth-child(2) .box:nth-child(2) {
+    background: url('../img/community/C440.png')no-repeat center/cover;
+}
+main .second-section .community .inner .bottom-content .news .newsbox .babox:nth-child(2) .box:nth-child(3) {
+    background: url('../img/community/5sss.png')no-repeat center/cover;
+}
+
+
+
+/* 광고배너 2 */
+main .second-section .advertisement2 .textbox {
+    width: 400px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+main .second-section .advertisement2 .textbox .benzlogo {
+    height: 14px;
+    width: 120px;
+    background: url('../img/banner/mercedes_benz.svg')no-repeat center/cover;
+}
+main .second-section .advertisement2 .imgbox {
+    width: calc(100% - 400px);
+    height: 100%;
+    border-radius: 0 10px 10px 0;
+    background: url('../img/banner/benzamg.jpg')no-repeat center/cover;
+}
+
+
+
+
+
+
+
+
+
+/* 정보아티클 */
+main .second-section .impormation {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* QnA */
+main .second-section .impormation .qna {
+    width: calc(100% - 10px);
+    padding: 50px 40px;
+}
+main .second-section .impormation .qna .title-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #D50527;
+}
+main .second-section .impormation .qna .title-bar h3 small {
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: normal;
+    color: #808080;
+}
+main .second-section .impormation .qna .detail-bar {
+    padding: 20px 0; 
+}
+main .second-section .impormation .qna .detail-bar li {
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+main .second-section .impormation .detail-bar li:hover {
+    cursor: pointer;
+    color: #D50527
+}
+main .second-section .impormation .qna .detail-bar li strong{
+    color: #D50527;
+}
+
+/* Notice */
+main .second-section .impormation .notice {
+    width: calc(100% - 10px);
+    padding: 50px 40px;
+}
+main .second-section .impormation .notice .title-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #D50527;
+}
+main .second-section .impormation .notice .title-bar h3 small {
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: normal;
+    color: #808080;
+}
+main .second-section .impormation .notice .detail-bar {
+    padding: 20px 0; 
+}
+main .second-section .impormation .notice .detail-bar li {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+main .second-section .impormation .notice .detail-bar li span {
+    font-size: 14px;
+    color: #cccccc;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* 푸터 */
+footer {
+    width: 100%;
+}
+footer .inner {
+    width: 100%;
+    padding: 60px 350px;
+}
+
+/* app다운로드+ */
+footer .inner .app-download {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    margin-bottom: 40px;
+}
+footer .inner .app-download .app-icon {
+    height: 120px;
+    width: 120px;
+    background: url('../img/footer/appLogo.svg')no-repeat center/cover;
+}
+footer .inner .app-download .app-detail {
+    padding: 15px 0;
+}
+footer .inner .app-download .app-detail .top-title {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+footer .inner .app-download .app-detail .top-title > div {
+    width: 34px;
+    height: 34px;
+    margin-top: 5px;
+}
+footer .inner .app-download .app-detail .top-title .appstore {
+    background: url('../img/footer/appstore.svg')no-repeat center/cover;
+    margin-left: 10px;
+}
+footer .inner .app-download .app-detail .top-title .playstore {
+    background: url('../img/footer/palystore.svg')no-repeat center/cover;
+}
+footer .inner .app-download .app-detail .middle-title p{
+    font-size: 16px;
+    color: #808080;
+}
+footer .inner .app-download .app-detail .bottom-title p{
+    font-size: 16px;
+    color: #666666;
+}
+
+/* 정보 */
+footer .inner .page-outro {
+    text-align: center;
+}
+footer .inner .page-outro span.line {
+    height: 9px;
+    width: 1px;
+    background-color: #cccccc;
+    margin-top: 5px;
+}
+footer .inner .page-outro h6 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+footer .inner .page-outro > div {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4px;
+}
+footer .inner .page-outro > div > p {
+    padding: 0 10px;
+    color: #666666;
+    font-size: 12px;
+}
+footer .inner .page-outro > div > p small {
+    text-decoration: underline;
+    cursor: pointer;
+}
+footer .inner .page-outro .company p:last-child {
+    border-right: none;
+}
+footer .inner .page-outro p {
+    font-size: 10px;
+    color: #808080;
+}
